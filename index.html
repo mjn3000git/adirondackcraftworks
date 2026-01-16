@@ -3,160 +3,211 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adirondack Craftworks | Handcrafted in the Adirondacks</title>
+  <title>Adirondack Craftworks | Handcrafted Wooden Treasures</title>
   <style>
     :root {
-      --primary: #4a7043;      /* Forest green */
-      --accent: #8b5a2b;       /* Warm wood brown */
-      --light: #f9f5eb;        /* Cream */
-      --dark: #3d2b1f;         /* Deep brown */
+      --primary: #3e5c3a;     /* Deep forest green */
+      --accent: #8b4513;       /* Rich mahogany brown */
+      --light: #fdfaf0;        /* Soft cream */
+      --dark: #2c1e0f;         /* Warm dark wood */
+      --gold: #d4af37;         /* Subtle highlight */
     }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: var(--light);
+      font-family: 'Georgia', serif;
+      background: var(--light);
       color: var(--dark);
-      line-height: 1.6;
+      line-height: 1.7;
     }
     header {
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1518709268805-4e9042af5929?auto=format&fit=crop&q=80') center/cover no-repeat;
+      position: relative;
+      height: 90vh;
+      min-height: 600px;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                  url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80') center/cover no-repeat fixed;
       color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 120px 20px 80px;
-      background-attachment: fixed;
+      padding: 0 20px;
     }
     header h1 {
-      font-size: 3.5rem;
-      margin: 0;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+      font-size: 4.5rem;
+      margin-bottom: 20px;
+      text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
     }
     header p {
-      font-size: 1.4rem;
-      margin: 10px 0 0;
+      font-size: 1.6rem;
+      max-width: 800px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 40px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 1.3rem;
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      background: var(--gold);
+      transform: scale(1.05);
     }
     nav {
-      background: var(--primary);
-      padding: 15px;
-      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(62, 92, 58, 0.9);
+      padding: 15px 0;
+      z-index: 1000;
+      backdrop-filter: blur(5px);
     }
     nav a {
       color: white;
-      margin: 0 20px;
+      margin: 0 25px;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s;
     }
-    nav a:hover { text-decoration: underline; }
+    nav a:hover { color: var(--gold); }
     section {
-      max-width: 1100px;
-      margin: 60px auto;
-      padding: 0 20px;
+      padding: 100px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
     h2 {
-      color: var(--accent);
       text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 30px;
+      font-size: 3rem;
+      color: var(--accent);
+      margin-bottom: 50px;
+      position: relative;
+    }
+    h2::after {
+      content: '';
+      width: 80px;
+      height: 4px;
+      background: var(--gold);
+      display: block;
+      margin: 15px auto 0;
+    }
+    .featured {
+      background: white;
+      border-radius: 20px;
+      padding: 50px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+    .featured img {
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(139,69,19,0.3);
+      margin: 30px 0;
     }
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
     }
     .gallery img {
       width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      transition: transform 0.3s;
-    }
-    .gallery img:hover { transform: scale(1.05); }
-    .about, .contact {
-      background: white;
-      padding: 40px;
       border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-      text-align: center;
+      transition: transform 0.4s, box-shadow 0.4s;
     }
-    form {
-      max-width: 500px;
-      margin: 0 auto;
+    .gallery img:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+    .contact form {
+      max-width: 600px;
+      margin: 0 auto 40px;
     }
     input, textarea {
       width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1rem;
+      padding: 15px;
+      margin: 15px 0;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 1.1rem;
     }
     button {
       background: var(--accent);
       color: white;
       border: none;
-      padding: 14px 30px;
-      font-size: 1.1rem;
-      border-radius: 6px;
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      border-radius: 50px;
       cursor: pointer;
+      transition: background 0.3s;
     }
-    button:hover { background: #6d4621; }
+    button:hover { background: var(--gold); }
     footer {
       background: var(--dark);
       color: white;
       text-align: center;
-      padding: 20px;
-      margin-top: 60px;
+      padding: 40px 20px;
+      margin-top: 80px;
     }
     @media (max-width: 768px) {
-      header { padding: 80px 20px 50px; }
-      header h1 { font-size: 2.8rem; }
+      header h1 { font-size: 3rem; }
+      header p { font-size: 1.3rem; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Adirondack Craftworks</h1>
-    <p>Handcrafted wooden treasures inspired by the mountains of upstate New York</p>
-  </header>
-
   <nav>
-    <a href="#about">About</a>
+    <a href="#home">Home</a>
+    <a href="#featured">Featured Piece</a>
     <a href="#gallery">Gallery</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="about" class="about">
-    <h2>About Us</h2>
-    <p>Based right here in Glens Falls, NY, Adirondack Craftworks creates one-of-a-kind pieces using local woods and timeless techniques. From custom signs and cutting boards to furniture accents and rustic decor—each item is made with care and meant to last generations.</p>
-    <p>Whether you're looking for a gift, home accent, or something special for your cabin, we've got you covered.</p>
+  <header id="home">
+    <h1>Adirondack Craftworks</h1>
+    <p>Timeless handcrafted wooden pieces inspired by the beauty of the Adirondack Mountains</p>
+    <a href="#featured" class="btn">Discover Our Work</a>
+  </header>
+
+  <section id="featured" class="featured">
+    <h2>Featured: Mahogany Sailboat</h2>
+    <p>This exquisite mahogany sailboat model is handcrafted with rich, warm mahogany wood—perfect as a display piece, nautical decor, or thoughtful gift. Capturing the elegance of classic pond yachts and maritime heritage, each curve and detail is shaped with care right here in Glens Falls, NY.</p>
+    
+    <!-- Replace this src with your OWN uploaded photo of the mahogany sailboat! -->
+    <!-- Example placeholder from search results (remove or swap): -->
+    <img src="https://i.ebayimg.com/images/g/soIAAOSwW-JhFoAs/s-l1600.jpg" alt="Handcrafted mahogany wooden sailboat model">
+    
+    <p><strong>Custom orders welcome</strong> — let us create one tailored to your vision!</p>
   </section>
 
   <section id="gallery">
-    <h2>Our Work</h2>
+    <h2>Our Handcrafted Collection</h2>
     <div class="gallery">
-      <!-- Upload your photos to the repo and replace these src URLs -->
-      <!-- Example: right-click your image in GitHub repo → Copy image address -->
-      <img src="https://via.placeholder.com/600x400?text=Custom+Wood+Sign" alt="Custom wooden sign">
-      <img src="https://via.placeholder.com/600x400?text=Cutting+Board" alt="Handmade cutting board">
-      <img src="https://via.placeholder.com/600x400?text=Rustic+Wall+Art" alt="Rustic wood wall piece">
-      <img src="https://via.placeholder.com/600x400?text=Furniture+Accent" alt="Wooden accent piece">
-      <!-- Add more <img> tags as you upload photos -->
+      <!-- Upload your photos and replace these srcs -->
+      <img src="https://via.placeholder.com/800x600?text=Custom+Wooden+Sign" alt="Custom wooden sign">
+      <img src="https://via.placeholder.com/800x600?text=Cutting+Board" alt="Handmade cutting board">
+      <img src="https://via.placeholder.com/800x600?text=Rustic+Decor" alt="Rustic wood decor piece">
+      <img src="https://via.placeholder.com/800x600?text=Furniture+Accent" alt="Wooden accent">
+      <!-- Add more as needed -->
     </div>
   </section>
 
-  <section id="contact" class="contact">
+  <section id="contact">
     <h2>Get in Touch</h2>
-    <p>Interested in a custom piece? Drop me a message!</p>
-    <form action="https://formspree.io/f/your-form-id" method="POST"> <!-- Get free form endpoint at formspree.io -->
+    <form action="https://formspree.io/f/your-email-here" method="POST"> <!-- Sign up free at formspree.io for endpoint -->
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="6" placeholder="Tell me about your project..." required></textarea>
+      <textarea name="message" rows="7" placeholder="Tell me about your custom idea or inquiry..." required></textarea>
       <button type="submit">Send Message</button>
     </form>
-    <p style="margin-top: 20px;">Or email directly: yourname@example.com</p>
+    <p style="text-align:center;">Or email: yourname@example.com</p>
   </section>
 
   <footer>
-    <p>&copy; 2026 Adirondack Craftworks | Glens Falls, NY | Handmade with ❤️ in the Adirondacks</p>
+    <p>&copy; 2026 Adirondack Craftworks • Glens Falls, New York • Handmade with passion in the Adirondacks</p>
   </footer>
 
 </body>
