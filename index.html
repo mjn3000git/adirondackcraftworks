@@ -24,7 +24,7 @@
       height: 90vh;
       min-height: 600px;
       background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                  url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80') center/cover no-repeat fixed;
+                  url('https://media.istockphoto.com/id/504055715/photo/sundown-at-schroon-lake.jpg?s=612x612&w=0&k=20&c=-9I48wrGzb7Et4tyqtSOt-7Z33U8tgdmlAQbCAnpQ2k=') center/cover no-repeat fixed;
       color: white;
       display: flex;
       flex-direction: column;
@@ -32,6 +32,13 @@
       align-items: center;
       text-align: center;
       padding: 0 20px;
+    }
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 40px;
+      width: 100px; /* Adjust size as needed */
+      height: auto;
     }
     header h1 {
       font-size: 4.5rem;
@@ -65,6 +72,7 @@
       padding: 15px 0;
       z-index: 1000;
       backdrop-filter: blur(5px);
+      text-align: center;
     }
     nav a {
       color: white;
@@ -154,6 +162,7 @@
     @media (max-width: 768px) {
       header h1 { font-size: 3rem; }
       header p { font-size: 1.3rem; }
+      .logo { width: 80px; left: 20px; }
     }
   </style>
 </head>
@@ -167,31 +176,28 @@
   </nav>
 
   <header id="home">
+    <img src="https://www.shutterstock.com/image-vector/bear-walking-profile-silhouette-illustration-600nw-2637600487.jpg" alt="Adirondack Bear Logo" class="logo">
     <h1>Adirondack Craftworks</h1>
-    <p>Timeless handcrafted wooden pieces inspired by the beauty of the Adirondack Mountains</p>
+    <p>Timeless handcrafted wooden pieces inspired by the beauty of the Adirondack Mountains and Schroon Lake</p>
     <a href="#featured" class="btn">Discover Our Work</a>
   </header>
 
   <section id="featured" class="featured">
-    <h2>Featured: Mahogany Sailboat</h2>
-    <p>This exquisite mahogany sailboat model is handcrafted with rich, warm mahogany wood—perfect as a display piece, nautical decor, or thoughtful gift. Capturing the elegance of classic pond yachts and maritime heritage, each curve and detail is shaped with care right here in Glens Falls, NY.</p>
+    <h2>Featured: Intricate High-End Mahogany Bear Sculpture</h2>
+    <p>This luxurious, highly detailed mahogany bear sculpture is a masterpiece of craftsmanship—carved with intricate details capturing the spirit of Adirondack wildlife. Using premium mahogany, it's perfect as a high-end display piece, heirloom, or statement decor for your home or cabin near Schroon Lake.</p>
     
-    <!-- Replace this src with your OWN uploaded photo of the mahogany sailboat! -->
-    <!-- Example placeholder from search results (remove or swap): -->
-    <img src="https://i.ebayimg.com/images/g/soIAAOSwW-JhFoAs/s-l1600.jpg" alt="Handcrafted mahogany wooden sailboat model">
+    <img src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=7808990445883232" alt="Intricate high-end mahogany bear wood carving sculpture">
     
-    <p><strong>Custom orders welcome</strong> — let us create one tailored to your vision!</p>
+    <p><strong>Custom commissions available</strong> — elevate your space with a bespoke creation!</p>
   </section>
 
   <section id="gallery">
     <h2>Our Handcrafted Collection</h2>
     <div class="gallery">
-      <!-- Upload your photos and replace these srcs -->
-      <img src="https://via.placeholder.com/800x600?text=Custom+Wooden+Sign" alt="Custom wooden sign">
-      <img src="https://via.placeholder.com/800x600?text=Cutting+Board" alt="Handmade cutting board">
-      <img src="https://via.placeholder.com/800x600?text=Rustic+Decor" alt="Rustic wood decor piece">
-      <img src="https://via.placeholder.com/800x600?text=Furniture+Accent" alt="Wooden accent">
-      <!-- Add more as needed -->
+      <img src="https://i.ebayimg.com/images/g/6scAAOSw6r9mybxn/s-l400.jpg" alt="Handcrafted wooden sign Adirondack mountains theme">
+      <img src="https://cdn11.bigcommerce.com/s-qzfum2xyru/images/stencil/1280x1280/products/7563/31753/Rustic_Mahogany_Cutting_Board__57730.1746470985.png?c=2" alt="Rustic handmade mahogany cutting board">
+      <img src="https://i.etsystatic.com/25259924/r/il/579a54/6315427266/il_fullxfull.6315427266_embj.jpg" alt="Intricate wooden wall art with Adirondack wildlife carving">
+      <img src="https://www.decorpot.com/images/blogimage553758722african-mahogany.jpg" alt="High-end mahogany wooden furniture accent piece">
     </div>
   </section>
 
