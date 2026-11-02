@@ -20,7 +20,7 @@ section{padding:clamp(4rem,9vw,7rem) 0}
 .top nav ul{list-style:none;display:flex;gap:1.5rem;margin:0;padding:0;align-items:center}
 .top nav a{color:var(--stone);text-decoration:none;font-size:.92rem;font-weight:500}
 .top nav a:hover{color:#fff}
-.top .cta{background:var(--ember);color:#fff;padding:.5rem 1rem;border-radius:999px}
+.top .cta{background:var(--ember);color:#fff;padding:.5rem 1rem;border-radius:999px;white-space:nowrap;display:inline-block}
 .menu-btn{display:none}
 
 /* hero */
